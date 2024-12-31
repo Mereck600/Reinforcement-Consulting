@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Reinforcement Consulting 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a new version of the existing site that is still currently in use for now. [See old Site](https://www.reinforcementconsulting.com/).
 
 ## Available Scripts
 
