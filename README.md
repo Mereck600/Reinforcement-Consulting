@@ -4,6 +4,13 @@ This is a new version of the existing site that is still currently in use for no
 
 This site was created by Coffeetree Software [Here is our Site](https://www.coffeetreesoftware.com/).
 
+here are a list of reference sites:
+- [Example one](https://www.nfrf.org/).
+- [They Like the intro of this site)(https://1strcf.org/).
+- [Also like this](https://www.garysinisefoundation.org/mission).
+  
+
+
 ## Available Scripts
 
 In the project directory, you can run:
