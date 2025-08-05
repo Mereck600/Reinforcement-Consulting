@@ -1,0 +1,67 @@
+/* Overall Layout*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+ */
+.layout {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+/* :root{
+ background:  #FF0000;
+} */
+ 
+  
+body {
+  background-color: #000000; 
+  margin: 0;
+  font-family: 'EB Garamond', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.h4-style {
+  font-size: 1.25rem; /* Matches typical <h4> font size */
+  font-weight: normal; /* Matches typical <h4> weight */
+  line-height: 1.5; /* Adjust for readability */
+  margin: 0.5em 0; /* Adjust spacing to match <h4> */
+}
+
+.email-link {
+  color: inherit;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+/* * {
+  outline: 1px solid red !important;
+} */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
