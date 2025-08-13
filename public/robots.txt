@@ -1,3 +1,53 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for reinforcementconsulting.com
+# Last updated: 2025-08-13
+# SEO-friendly: full access for search engines to public pages
+# See /llm.txt for AI/LLM usage/licensing terms
+
+Sitemap: https://www.reinforcementconsulting.com/sitemap.xml
+
+#--- Default: block sensitive paths, but allow public content
 User-agent: *
-Disallow:
+Disallow: /client-portal/
+Disallow: /projects/
+Disallow: /billing/
+Disallow: /admin/
+Disallow: /login/
+Disallow: /api/
+# Allow legal pages for transparency
+Allow: /privacy/
+Allow: /terms/
+
+#--- Search engine bots: full access to public pages
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+#--- Block AI/LLM-specific crawlers (no SEO impact)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Meta-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /

@@ -1,9 +1,11 @@
 .home-container {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh; /* allow page to grow beyond viewport */
+  overflow-x: hidden; /* prevent horizontal scroll, allow vertical */
+  overflow-y: auto;   /* allow scrolling */
 }
+
 
 /* Intro logo covers the screen */
 .intro-logo-container {
@@ -17,13 +19,13 @@
   justify-content: center;
   background-color: white; /* Or your background color */
   z-index: 9999;
-  animation: fadeOut 3s forwards;
+  animation: fadeOut 3.5s forwards;
 }
 
 .intro-logo {
   width: 200px;
   height: auto;
-  animation: scaleFade 3s forwards;
+  animation: scaleFade 3.5s forwards;
 }
 
 @keyframes scaleFade {

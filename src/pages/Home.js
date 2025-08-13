@@ -1,9 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "../components/Home.css";
-import PageTitle from '../components/PageTitle';
-import { Typography, Button, Container, Grid, Box, Paper } from "@mui/material";
+import PageTitle from "../components/PageTitle";
+//import FeatureCard from "../components/FeatureCard";
+import FeatureSection from "../components/FeatureSection";
+import ThreeColumnFeature from "../components/ThreeColumns";
+import { useTheme } from "@mui/material/styles";
+import TestimonialSection from "../components/TestimonialSection";
+//import VimeoEmbed from "../components/Vimeo";
+import {
+  Typography,
+  Button,
+  Container,
+  Grid,
+  Box,
+  Paper,
+} from "@mui/material";
+//import StandardImageList from "../components/ImageList";
 
 const Home = () => {
+  const theme = useTheme(); 
   const [showIntro, setShowIntro] = useState(false);
   const [animationDone, setAnimationDone] = useState(false);
 
@@ -26,7 +41,7 @@ const Home = () => {
   }, []);
 
   return (
-    <Container maxWidth="lg" sx={{ minHeight: "80vh" }}>
+    <Container maxWidth="lg" sx={{ minHeight: "80vh", py: 4 }}>
       <div className="home-container">
         {showIntro && (
           <div className="intro-logo-container">
@@ -39,93 +54,123 @@ const Home = () => {
         )}
 
         {animationDone && (
-          <Container
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="center"
-            textAlign="center"
-            minHeight="60vh"  // adjust height to vertically center
-          >
-            <PageTitle
-              title="Reinforcement Consulting"
-              description={
-                <>
-                  <Typography variant="h5" gutterBottom>
-                    Accessible Training for First Responders
+          <>
+            {/* Hero / Page Title */}
+            <Box textAlign="center" mb={6}>
+              <PageTitle
+                title="Reinforcement Consulting"
+                description={
+                  <>
+                    <Typography variant="h5" gutterBottom>
+                      Accessible Training for First Responders
+                    </Typography>
+                    <a
+                      href="https://reinforcement911.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <Button
+                        variant="contained"
+                        sx={{
+                          mt: 2,
+                          backgroundColor: "black",
+                          color: "white",
+                          "&:hover": { backgroundColor: "black", color: "white" },
+                        }}
+                      >
+                        Donate
+                      </Button>
+                    </a>
+                  </>
+                }
+              />
+            </Box>
+
+            
+           <Grid item xs={12} sx={{marginBottom:4, }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+                <Box sx={{ position: 'relative', width: '100%', maxWidth: 800, aspectRatio: '16 / 9' }}>
+                <iframe
+                    src="https://www.youtube.com/embed/EQ8AEeeb2no?rel=0&modestbranding=1&playsinline=1"
+                    title="Test"
+                    loading="lazy"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+                />
+                </Box>
+            </Box>
+            </Grid>
+
+
+
+
+
+           
+           
+            {/* Mission Text + Feature Card */}
+            <Grid container spacing={4} justifyContent="center">
+            
+
+              <Grid item xs={12} md={8}>
+                <Paper
+                  elevation={18}
+                  sx={{
+                    textAlign: { xs: "left", md: "center" },
+                    padding: { xs: 2, md: 4 },
+                    borderRadius: "25px",
+                    backgroundColor: theme.palette.background.paper,
+                  }}
+                >
+                  <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.6 }}>
+                    Reinforcement Consulting provides expert and accredited
+                    consulting, training, and educational resources to create
+                    and support effective Wellness Programs and Peer Support
+                    Teams for those who serve our communities.
+                  </Typography>
+                  <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.6 }}>
+                    Our mission is to support our first responders as their jobs
+                    become increasingly challenging. By providing integrative
+                    training and consultation, we equip first responders with
+                    the knowledge and skills they need to work through Critical
+                    Incidents and accumulated stress to live longer, happier,
+                    healthier lives.
                   </Typography>
                   
-                  <a
-                    href="https://reinforcement911.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <Button
-                      variant="contained"
-                      sx={{
-                        mt: 2,
-                        backgroundColor: "black",
-                        color: "white",
-                        "&:hover": { backgroundColor: "black", color: "white" },
-                      }}
-                    >
-                      Donate
-                    </Button>
-                  </a>
-                </>
-              }
-            />
-            {/*Fix this embedded link  */}
-            <Grid item xs={12} marginBottom={2}>
-                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-                
-                    <iframe
-                        width="600"
-                        height="415"
-                        src="https://www.youtube.com/watch?v=jfKfPfyJRdk"
-                        title="Reinforcement Consulting Introduction"
-                        loading="lazy"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    />
-                    
-                </Box>
-             </Grid>
-             <Grid item xs={12}>
-                <Paper elevation={18} sx={{ textAlign: { xs: 'left', md: 'center' }, padding: { xs: 2, md: 4 }, borderRadius: "25px" }}>
-                    <Typography variant="body1" sx={{ marginBottom: 2, lineHeight: 1.6 }}>
-                        Reinforcement Consulting provides expert and accredited consulting, training, and educational resources to create and support effective Wellness Programs and Peer Support Teams for those who serve our communities.
-                     </Typography>
-                     <Typography variant="body1" sx={{ marginBottom: 2, lineHeight: 1.6 }}>
-                     Our mission is to support our first responders as their jobs become increasingly challenging. By providing integrative training and consultation, we equip first responders with the knowledge and skills they need to work through Critical Incidents and accumulated stress to live longer, happier, healthier lives.
-                     </Typography>
-                      <Typography variant="body1" sx={{ marginBottom: 2, lineHeight: 1.6 }}>
-                      The job is harder than it’s ever been. Invest in your number one resource: your people.
-                     </Typography>
-                     <Box 
-                        component="ul" 
-                        sx={{ 
-                            pl: 3,               // padding left
-                            listStylePosition: "inside",
-                            margin: 0,
-                        }}
-                        >
-                        <li>All-inclusive courses</li>
-                        <li>POST Certified in Minnesota</li>
-                        <li>Online Courses Accessible anywhere, anytime</li>
-                        <li>Real Stories</li>
-                        <li>Effective Skills</li>
-                        <li>Successful Peer and Reintegration Teams</li>
-                        <li>ReSet Retreats</li>
-                    </Box>
-
-
                 </Paper>
-             </Grid>
+              </Grid>
 
-          </Container>
+              <FeatureSection />
+
+              <Box sx={{ width: "100%", my: 6 }}>
+                <ThreeColumnFeature />
+              </Box>
+
+              <Grid item xs={12} md={8} >
+                <Paper
+                  elevation={18}
+                  sx={{
+                    textAlign: { xs: "left", md: "center" },
+                    padding: { xs: 2, md: 2 },
+                    borderRadius: "20",
+                    backgroundColor: theme.palette.background.paper,
+                  }}
+                >
+                  
+                  <Typography variant="h5" sx={{ mb: 2, lineHeight: 1.6 }}>
+                   Support and Strength for all First Responders
+                  </Typography>
+                  
+                </Paper>
+              </Grid>
+              <TestimonialSection />
+
+
+              
+            </Grid>
+          </>
         )}
       </div>
     </Container>

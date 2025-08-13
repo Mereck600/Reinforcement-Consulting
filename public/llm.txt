@@ -1,0 +1,118 @@
+# llm.txt — Guidance for AI/LLM crawlers and dataset builders
+# Site: https://www.reinforcementconsulting.com
+# Organization: Reinforcement Consulting
+# Last-Updated: 2025-08-13
+# Contact: webmaster@reinforcementconsulting.com
+# Sitemap: https://www.reinforcementconsulting.com/sitemap.xml
+
+#######################################################################
+# Summary
+# Specifies terms for AI/LLM training, indexing, and content reuse.
+# Complements robots.txt; robots.txt controls crawl access.
+#######################################################################
+
+[Policy]
+training: disallow
+derivative-datasets: disallow
+summaries/snippets: allow
+search-indexing: allow
+commercial-reuse: disallow
+noncommercial-reuse: allow-with-attribution
+
+[Attribution]
+name: Reinforcement Consulting
+url: https://www.reinforcementconsulting.com
+required-fields: ["name","url"]
+format: "“{title}”, Reinforcement Consulting — {url}"
+
+[Contact]
+email: info@reinforcementconsulting.com
+legal-notice: "For licensing requests or questions about this policy, email us."
+
+[Scope-Allow]
+paths: [
+  "/",
+  "/about/",
+  "/services/",
+  "/team/",
+  "/resources/",
+  "/blog/",
+  "/contact/"
+]
+
+[Scope-Disallow]
+paths: [
+  "/client-portal/",
+  "/projects/",
+  "/billing/",
+  "/admin/",
+  "/login/",
+  "/privacy/",
+  "/terms/",
+  "/api/"
+]
+
+[Retention]
+delete-previous-copies: required
+retention-period: "30 days from first observation"
+
+[Rate-Limits]
+crawl-delay: 10s
+max-requests-per-minute: 6
+respect-If-Modified-Since: true
+
+[Prohibitions]
+You may NOT:
+- bypass access controls or use our content in ways that suggest endorsement
+- harvest PII/PHI for model training
+- generate misleading legal or clinical attributions to our staff
+
+[Permitted Uses]
+You MAY:
+- index public, non-sensitive pages for search
+- display short snippets (≤ 160 characters) linking back
+- create non-commercial summaries with proper attribution
+
+[Licensing]
+license: "CC BY-NC 4.0 for snippets/summaries only"
+license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+Full-text reuse or training needs a separate written license.
+
+[Enforcement]
+takedown-window: "72h"
+
+#######################################################################
+# Known AI/LLM Crawlers
+User-agent: GPTBot
+Disallow: /client-portal/ /projects/ /billing/ /admin/ /login/ /privacy/ /terms/ /api/
+
+User-agent: ClaudeBot
+Disallow: /client-portal/ /projects/ /billing/ /admin/ /login/ /privacy/ /terms/ /api/
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /client-portal/ /projects/ /billing/ /admin/ /login/ /privacy/ /terms/ /api/
+crawl-delay: 10
+
+User-agent: PerplexityBot
+Disallow: /client-portal/ /projects/ /billing/ /admin/ /login/ /privacy/ /terms/ /api/
+crawl-delay: 10
+
+User-agent: Meta-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /client-portal/ /projects/ /billing/ /admin/ /login/ /privacy/ /terms/ /api/
+crawl-delay: 10
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: *
+Disallow: /client-portal/ /projects/ /billing/ /admin/ /login/ /api/
+crawl-delay: 10

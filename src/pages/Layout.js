@@ -9,29 +9,30 @@ const Layout = () => {
 
   return (
     <div
-      className="layout"
-      style={{ backgroundColor: theme.palette.secondary.main, minHeight: "100vh" }}
+  className="layout"
+  style={{ backgroundColor: theme.palette.background.default, minHeight: "100vh" }}
+>
+  <main
+    style={{
+      flex: 1,
+      display: "flex",
+      flexDirection: "column",
+      backgroundColor: theme.palette.background.default
+    }}
+  >
+    <Header />
+    <div
+      style={{
+        backgroundColor: theme.palette.background.default,
+        padding: "2% 5%"
+      }}
     >
-      <main
-        style={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          backgroundColor: theme.palette.secondary.main
-        }}
-      >
-        <Header />
-        <div
-          style={{
-            backgroundColor: theme.palette.secondary.main,
-            padding: "2% 5%"
-          }}
-        >
-          <Outlet />
-        </div>
-        <Footer />
-      </main>
+      <Outlet />
     </div>
+    <Footer />
+  </main>
+</div>
+
   );
 };
 
