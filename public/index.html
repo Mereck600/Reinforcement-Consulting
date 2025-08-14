@@ -2,39 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- <meta http-equiv="Content-Security-Policy"
-      content="default-src 'self';
-               frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;
-               script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.gstatic.com;
-               img-src 'self' https://i.ytimg.com data:;
-               style-src 'self' 'unsafe-inline';"> -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Primary Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Reinforcement Consulting</title>
+    <meta
+      name="description"
+      content="Our goal at Reinforcement Consulting is to reverse stark statistics facing the law enforcement community with peer support training and wellness programs."
+    />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://reinforcementconsulting.com" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/InvertReLogoNoBG.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/InvertReLogoNoBG.png" />
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Reinforcement Consulting" />
+    <meta
+      property="og:description"
+      content="Peer Support training, consulting, and resources to strengthen first responders' wellness."
+    />
+    <!-- If you have a 1200x630 banner, use that instead of the logo: %PUBLIC_URL%/og-banner.jpg -->
+    <meta property="og:image" content="%PUBLIC_URL%/InvertReLogoNoBG.png" />
+    <meta property="og:url" content="https://reinforcementconsulting.com" />
+    <meta property="og:site_name" content="Reinforcement Consulting" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Reinforcement Consulting" />
+    <meta
+      name="twitter:description"
+      content="Peer Support training, consulting, and resources to strengthen first responders' wellness."
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/InvertReLogoNoBG.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="%PUBLIC_URL%/InvertReLogoNoBG.png" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="Reinforcement Consulting"
-      content="Our goal at Reinforcement Consulting is to reverse some of the stark statistics facing the law enforcement community today with our Peer Support Training "
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
-  
-    <title>Reinforcement Consulting</title>
+    <!-- Optional CSP (tune before enabling) -->
+   <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        base-uri 'self';
+        form-action 'self' https://api.emailjs.com;
+        frame-ancestors 'self';
+        upgrade-insecure-requests;
+
+        script-src 'self' 'unsafe-inline';
+        style-src  'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src   https://fonts.gstatic.com;
+        img-src    'self' data: https:;
+        connect-src 'self' https://api.emailjs.com;
+
+        frame-src  https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com;
+      ">
+
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    
   </body>
 </html>

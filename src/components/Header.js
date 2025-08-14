@@ -1,5 +1,6 @@
 // Header.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Box,
   Container,
@@ -88,18 +89,21 @@ function Header() {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           {/* LEFT: logo + brand name */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <img
-              src= "/assets/images/InvertReLogoNoBG.png" //or use "/assets/images/reinforcementLogo.png" | "/assets/images/oldsite/rc-logo.png"
-              alt="Reinforcement Consulting Logo"
-              style={{ width: 70, height: "auto", marginRight: 12 }}
-            />
+            <Link to="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+              <img
+                src="/assets/images/InvertReLogoNoBG.png"
+                alt="Reinforcement Consulting Logo"
+                style={{ width: 70, height: "auto", marginRight: 12, cursor: "pointer" }}
+              />
+            </Link>
+
             <Button
-              variant="text"
-              href="/"
+              component={Link}
+              to="/"
               sx={{
                 color: "white",
                 textTransform: "none",
-                fontSize: { xs: "1.1rem", md: "1.25rem" }, // bigger brand text
+                fontSize: { xs: "1.1rem", md: "1.25rem" },
                 fontWeight: 700,
               }}
             >

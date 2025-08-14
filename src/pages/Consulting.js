@@ -56,23 +56,23 @@ export default function Consulting() {
                            We’ll have at least two Reinforcement Consulting providers meet with your team to get started. Next, we’ll tailor our service offerings to meet your specific needs based on organizational structure and the status of your Peer Support program. We’ll also consider your department’s size and any available resources per the recommendations of Reinforcement Consulting.
                           </Typography>
                           <a
-                                                href="/Contact"
-                                               
-                                                rel="noopener noreferrer"
-                                                style={{ textDecoration: "none" }}
-                                              >
-                                                <Button
-                                                  variant="contained"
-                                                  sx={{
-                                                    mt: 2,
-                                                    backgroundColor: "black",
-                                                    color: "white",
-                                                    "&:hover": { backgroundColor: "black", color: "white" },
-                                                  }}
-                                                >
-                                                  Sign Up Today
-                                                </Button>
-                                              </a>
+                              href="/Contact"
+                              
+                              rel="noopener noreferrer"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Button
+                                variant="contained"
+                                sx={{
+                                  mt: 2,
+                                  backgroundColor: "black",
+                                  color: "white",
+                                  "&:hover": { backgroundColor: "black", color: "white" },
+                                }}
+                              >
+                                Sign Up Today
+                              </Button>
+                            </a>
 
                         </Paper>
                       </Grid>

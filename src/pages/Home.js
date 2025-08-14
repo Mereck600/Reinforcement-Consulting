@@ -16,6 +16,7 @@ import {
   Paper,
 } from "@mui/material";
 //import StandardImageList from "../components/ImageList";
+const REPLAY_MINUTES = 5; 
 
 const Home = () => {
   const theme = useTheme(); 
@@ -23,16 +24,18 @@ const Home = () => {
   const [animationDone, setAnimationDone] = useState(false);
 
   useEffect(() => {
-    const hasVisited = localStorage.getItem("homeAnimationPlayed");
+    const key = "homeAnimationLastPlayedAt";
+    const now = Date.now();
+    const last = parseInt(localStorage.getItem(key) || "0", 10);
+    const shouldPlay = !last || now - last > REPLAY_MINUTES * 60 * 1000;
 
-    if (!hasVisited) {
+    if (shouldPlay) {
       setShowIntro(true);
-
       const timer = setTimeout(() => {
         setAnimationDone(true);
         setShowIntro(false);
-        localStorage.setItem("homeAnimationPlayed", "true");
-      }, 3000);
+        localStorage.setItem(key, String(Date.now()));
+      }, 3000); // 3s animation
 
       return () => clearTimeout(timer);
     } else {

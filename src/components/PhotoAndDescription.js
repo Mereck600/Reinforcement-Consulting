@@ -57,8 +57,10 @@ export default function PhotoAndDescription({
     >
       {/* Clickable image + title */}
       <CardActionArea
-        component={to ? RouterLink : "div"}
-        to={to || undefined}
+        component="a"
+        href={to || "#"}
+        target="_blank" // opens in new tab
+        rel="noopener noreferrer"
         sx={{ alignItems: "stretch", borderRadius: 2 }}
       >
         <Box
